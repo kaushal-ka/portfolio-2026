@@ -561,7 +561,7 @@ textarea.form-control {
 
 .project-card {
   flex: 0 0 100%;
-  padding: 2rem;
+  padding: 2.5rem;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 12px;
@@ -569,7 +569,7 @@ textarea.form-control {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  min-height: 350px;
+  min-height: 390px;
 }
 
 .project-card:hover {
@@ -578,26 +578,29 @@ textarea.form-control {
 }
 
 .project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  margin-bottom: 1.5rem;
+  gap: 2rem;
 }
 
 .project-header h3 {
   font-size: 1.5rem;
   color: var(--text-main);
+  margin: 0;
 }
 
 .project-badge {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
-  padding: 0.25rem 0.75rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
   white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-block;
 }
 
 .project-card p {
