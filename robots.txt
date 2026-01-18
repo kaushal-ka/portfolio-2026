@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /favicon_io/
+
+Sitemap: https://kaushal-ka.github.io/portfolio-2026/sitemap.xml
+
+# Allow search engines to crawl all content
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
