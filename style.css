@@ -549,7 +549,7 @@ textarea.form-control {
 
 .projects-container {
   flex: 1;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 12px;
 }
 
@@ -561,7 +561,7 @@ textarea.form-control {
 
 .project-card {
   flex: 0 0 100%;
-  padding: 2.5rem;
+  padding: 4rem 2.5rem 2.5rem 2.5rem;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 12px;
@@ -570,6 +570,7 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   min-height: 390px;
+  overflow: visible;
 }
 
 .project-card:hover {
@@ -580,9 +581,10 @@ textarea.form-control {
 .project-header {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: start;
+  align-items: center;
   margin-bottom: 1.5rem;
   gap: 2rem;
+  min-height: 50px;
 }
 
 .project-header h3 {
