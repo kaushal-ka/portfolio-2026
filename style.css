@@ -545,12 +545,15 @@ textarea.form-control {
   align-items: center;
   gap: 2rem;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .projects-container {
   flex: 1;
   overflow: visible;
   border-radius: 12px;
+  min-width: 0;
 }
 
 .projects-carousel {
@@ -642,6 +645,8 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  z-index: 10;
+  position: relative;
 }
 
 .nav-btn:hover {
