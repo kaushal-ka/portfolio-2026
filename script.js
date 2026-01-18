@@ -54,9 +54,27 @@ if (statsSection) {
 const mobileMenuBtn = document.getElementById('mobile-menu');
 const navLinks = document.getElementById('nav-links');
 
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
+if (mobileMenuBtn && navLinks) {
+    // Toggle menu
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active')) {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        }
     });
 }
 
@@ -120,7 +138,7 @@ const totalProjects = 3;
 function updateCarousel() {
     const offset = currentProject * -100;
     projectCarousel.style.transform = `translateX(${offset}%)`;
-    
+
     // Update indicators
     indicators.forEach((indicator, index) => {
         indicator.classList.toggle('active', index === currentProject);
