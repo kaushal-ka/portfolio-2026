@@ -108,3 +108,43 @@ function showFeedback(text, type) {
         formMessage.style.display = 'none';
     }, 5000);
 }
+
+// Project Carousel Navigation
+const projectCarousel = document.querySelector('.projects-carousel');
+const prevProjectBtn = document.getElementById('prevProject');
+const nextProjectBtn = document.getElementById('nextProject');
+const indicators = document.querySelectorAll('.indicator');
+let currentProject = 0;
+const totalProjects = 3;
+
+function updateCarousel() {
+    const offset = currentProject * -100;
+    projectCarousel.style.transform = `translateX(${offset}%)`;
+    
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentProject);
+    });
+}
+
+if (prevProjectBtn) {
+    prevProjectBtn.addEventListener('click', () => {
+        currentProject = (currentProject - 1 + totalProjects) % totalProjects;
+        updateCarousel();
+    });
+}
+
+if (nextProjectBtn) {
+    nextProjectBtn.addEventListener('click', () => {
+        currentProject = (currentProject + 1) % totalProjects;
+        updateCarousel();
+    });
+}
+
+// Indicator Navigation
+indicators.forEach(indicator => {
+    indicator.addEventListener('click', () => {
+        currentProject = parseInt(indicator.getAttribute('data-project')) - 1;
+        updateCarousel();
+    });
+});

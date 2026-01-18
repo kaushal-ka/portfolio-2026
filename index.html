@@ -167,15 +167,64 @@
     <section id="projects" class="section">
       <div class="container">
         <h2 class="section-title">Featured Works</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Personal Portfolio</h3>
-            <p>You are here! A modern, SEO-optimized, responsive portfolio built with vanilla technologies.</p>
+        
+        <!-- Project Navigation -->
+        <div class="projects-nav">
+          <button class="nav-btn nav-btn-prev" id="prevProject" aria-label="Previous project">❮</button>
+          <div class="projects-container">
+            <div class="projects-carousel">
+              <div class="project-card" id="project-1">
+                <div class="project-header">
+                  <h3>Personal Portfolio</h3>
+                  <span class="project-badge">Portfolio</span>
+                </div>
+                <p>You are here! A modern, SEO-optimized, responsive portfolio built with vanilla technologies.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="https://github.com/kaushal-ka/portfolio-2026" target="_blank" class="btn btn-outline">View Project</a>
+              </div>
+
+              <div class="project-card" id="project-2">
+                <div class="project-header">
+                  <h3>College Platform UI</h3>
+                  <span class="project-badge">Web App</span>
+                </div>
+                <p>Complete frontend interface for a college management system. Custom assets and clean layout.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <a href="https://kaushalcollegeproject.netlify.app/" target="_blank" class="btn btn-outline">View Project</a>
+              </div>
+
+              <div class="project-card" id="project-3">
+                <div class="project-header">
+                  <h3>Spotify Clone</h3>
+                  <span class="project-badge">Music App</span>
+                </div>
+                <p>A functional Spotify-inspired music streaming interface with playlist management, song search, and smooth playback controls.</p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Audio API</span>
+                </div>
+                <a href="https://kaushalspotify.netlify.app/" target="_blank" class="btn btn-outline">View Project</a>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <h3>College Platform UI</h3>
-            <p>Complete frontend interface for a college management system. Custom assets and clean layout.</p>
-          </div>
+          <button class="nav-btn nav-btn-next" id="nextProject" aria-label="Next project">❯</button>
+        </div>
+
+        <!-- Project Indicators -->
+        <div class="project-indicators">
+          <button class="indicator active" data-project="1" aria-label="Project 1"></button>
+          <button class="indicator" data-project="2" aria-label="Project 2"></button>
+          <button class="indicator" data-project="3" aria-label="Project 3"></button>
         </div>
       </div>
     </section>
