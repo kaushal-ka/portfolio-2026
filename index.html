@@ -61,13 +61,17 @@
   </script>
 
   <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome 6.5.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Favicon icon  -->
   <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
   <link rel="manifest" href="favicon_io/site.webmanifest">
-  
+
   <!-- Sitemap and Robots -->
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 </head>
@@ -79,8 +83,11 @@
     <div class="container nav-container">
       <a href="#" class="logo">Kaushal.dev</a>
       <div class="menu-toggle" id="mobile-menu">
-        ☰
+        <i class="fas fa-bars"></i>
       </div>
+      <button id="theme-toggle" aria-label="Toggle Theme" class="theme-btn">
+        <i class="fas fa-sun"></i>
+      </button>
       <nav class="nav-links" id="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -98,7 +105,9 @@
         <div class="hero-text">
           <h1>Kaushal Karn - Frontend Developer<br><span>Building Digital Realities</span></h1>
           <p>
-            Hi, I'm <strong>Kaushal Karn</strong>, a self-taught <strong>frontend developer from Nepal</strong> specializing in <strong>HTML5, CSS3, and JavaScript</strong>. I craft responsive, modern websites and exceptional user experiences for projects like Spotify Clone and College Platform.
+            Hi, I'm <strong>Kaushal Karn</strong>, a self-taught <strong>frontend developer from Nepal</strong>
+            specializing in <strong>HTML5, CSS3, and JavaScript</strong>. I craft responsive, modern websites and
+            exceptional user experiences for projects like Spotify Clone and College Platform.
           </p>
           <div class="btn-group">
             <a href="#projects" class="btn btn-primary">View My Projects</a>
@@ -126,7 +135,8 @@
             </div>
             <div class="info-item">
               <span>📧</span>
-              <span>kkarn02977@gmail.com</span>
+              <span><a href="mailto:kkarn02977@gmail.com"
+                  style="color: inherit; text-decoration: none;">kkarn02977@gmail.com</a></span>
             </div>
           </div>
         </div>
@@ -174,7 +184,7 @@
     <section id="projects" class="section">
       <div class="container">
         <h2 class="section-title">Featured Works</h2>
-        
+
         <!-- Project Navigation -->
         <div class="projects-nav">
           <button class="nav-btn nav-btn-prev" id="prevProject" aria-label="Previous project">❮</button>
@@ -191,7 +201,8 @@
                   <span class="tech-tag">CSS3</span>
                   <span class="tech-tag">JavaScript</span>
                 </div>
-                <a href="https://github.com/kaushal-ka/portfolio-2026" target="_blank" class="btn btn-outline">View Project</a>
+                <a href="https://github.com/kaushal-ka/portfolio-2026" target="_blank" class="btn btn-outline">View
+                  Project</a>
               </div>
 
               <div class="project-card" id="project-2">
@@ -205,7 +216,8 @@
                   <span class="tech-tag">CSS3</span>
                   <span class="tech-tag">JavaScript</span>
                 </div>
-                <a href="https://kaushal-karna.github.io/Himalayan-Darshan-College/" target="_blank" class="btn btn-outline">View Project</a>
+                <a href="https://kaushal-karna.github.io/Himalayan-Darshan-College/" target="_blank"
+                  class="btn btn-outline">View Project</a>
               </div>
 
               <div class="project-card" id="project-3">
@@ -213,14 +225,16 @@
                   <h3>Spotify Clone</h3>
                   <span class="project-badge">Music App</span>
                 </div>
-                <p>A functional Spotify-inspired music streaming interface with playlist management, song search, and smooth playback controls.</p>
+                <p>A functional Spotify-inspired music streaming interface with playlist management, song search, and
+                  smooth playback controls.</p>
                 <div class="project-tech">
                   <span class="tech-tag">HTML5</span>
                   <span class="tech-tag">CSS3</span>
                   <span class="tech-tag">JavaScript</span>
                   <span class="tech-tag">Audio API</span>
                 </div>
-                <a href="https://kaushal-karna.github.io/Spotify/" target="_blank" class="btn btn-outline">View Project</a>
+                <a href="https://kaushal-karna.github.io/Spotify/" target="_blank" class="btn btn-outline">View
+                  Project</a>
               </div>
             </div>
           </div>
@@ -271,11 +285,29 @@
             </p>
             <div class="contact-detail">
               <strong>Email</strong>
-              <span>kkarn02977@gmail.com</span>
+              <div class="contact-actions">
+                <a href="mailto:kkarn02977@gmail.com" class="contact-link email" aria-label="Email"><i
+                    class="fas fa-envelope"></i></a>
+              </div>
             </div>
             <div class="contact-detail">
-              <strong>GitHub</strong>
-              <span>github.com/kaushal-ka</span>
+              <strong>Phone / WhatsApp</strong>
+              <div class="contact-actions">
+                <a href="tel:+9779814325635" class="contact-link" aria-label="Call"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/9779814325635" target="_blank" class="contact-link whatsapp"
+                  aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <strong>Socials</strong>
+              <div class="social-links">
+                <a href="https://github.com/kaushal-karna" target="_blank" class="contact-link github"
+                  aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kaushal-karna-03694b304" target="_blank"
+                  class="contact-link linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/channel/UCtS-Yv8Fg3eXFBSPpe1pkaA" target="_blank"
+                  class="contact-link youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
             </div>
             <div class="contact-detail">
               <strong>Location</strong>

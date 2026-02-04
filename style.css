@@ -1,24 +1,42 @@
 :root {
-  /* Modern Color Palette */
-  --bg-dark: #0f172a;
-  --bg-darker: #020617;
+  /* Core Base Colors */
   --primary: #38bdf8;
-  /* Sky 400 */
   --primary-hover: #0ea5e9;
-  /* Sky 500 */
   --secondary: #a855f7;
-  /* Purple 500 */
   --accent: #22c55e;
-  /* Green 500 */
+
+  /* Semantic Colors (Dark Mode Default) */
+  --bg-page: #020617;
+  --bg-element: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.7);
+  --bg-header: rgba(2, 6, 23, 0.85);
+  --bg-input: rgba(2, 6, 23, 0.5);
+  --bg-button: rgba(30, 41, 59, 0.5);
+  --bg-hero-card: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
   --text-main: #f8fafc;
-  /* Slate 50 */
   --text-muted: #94a3b8;
-  /* Slate 400 */
-  --card-bg: rgba(30, 41, 59, 0.7);
-  --card-border: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+
   --glass: blur(12px);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+[data-theme="light"] {
+  /* Light Mode Overrides */
+  --bg-page: #f0f9ff;
+  --bg-element: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-header: rgba(255, 255, 255, 0.85);
+  --bg-input: rgba(240, 246, 255, 0.8);
+  --bg-button: rgba(255, 255, 255, 0.8);
+  --bg-hero-card: linear-gradient(145deg, #ffffff, #e0f2fe);
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
 
 * {
   margin: 0;
@@ -37,7 +55,7 @@ html {
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: var(--bg-darker);
+  background-color: var(--bg-page);
   background-image:
     radial-gradient(circle at 15% 50%, rgba(56, 189, 248, 0.08), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.08), transparent 25%);
@@ -96,9 +114,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(2, 6, 23, 0.85);
+  background: var(--bg-header);
   backdrop-filter: var(--glass);
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
 }
 
@@ -129,6 +147,30 @@ header {
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--primary);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.theme-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.theme-btn:hover {
+  transform: rotate(15deg) scale(1.1);
+  color: var(--secondary);
 }
 
 /* Mobile Menu Toggle */
@@ -193,7 +235,7 @@ header {
 
 .btn-primary {
   background: var(--primary);
-  color: var(--bg-darker);
+  color: var(--bg-page);
 }
 
 .btn-primary:hover {
@@ -204,7 +246,7 @@ header {
 
 .btn-outline {
   background: transparent;
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border-color);
   color: var(--text-main);
 }
 
@@ -214,10 +256,10 @@ header {
 }
 
 .hero-card {
-  background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+  background: var(--bg-hero-card);
   padding: 2rem;
   border-radius: 24px;
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border-color);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(20px);
   position: relative;
@@ -271,7 +313,7 @@ header {
 
 .service-card:hover .service-icon {
   background: var(--primary);
-  color: var(--bg-darker);
+  color: var(--bg-page);
   transform: rotateY(360deg);
 }
 
@@ -282,7 +324,7 @@ header {
   gap: 2rem;
   text-align: center;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border-color);
   padding: 3rem;
   border-radius: 20px;
 }
@@ -321,7 +363,7 @@ header {
 .client-info {
   margin-top: 1.5rem;
   font-style: normal;
-  border-top: 1px solid var(--card-border);
+  border-top: 1px solid var(--border-color);
   padding-top: 1rem;
 }
 
@@ -342,7 +384,7 @@ header {
   height: 280px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid var(--card-border);
+  border: 4px solid var(--border-color);
   box-shadow: 0 0 50px rgba(56, 189, 248, 0.2);
   position: relative;
   animation: float 6s ease-in-out infinite;
@@ -383,7 +425,7 @@ header {
 /* Cards */
 .card {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border-color);
   padding: 2rem;
   border-radius: 16px;
   transition: var(--transition);
@@ -392,7 +434,7 @@ header {
 .card:hover {
   transform: translateY(-5px);
   border-color: rgba(56, 189, 248, 0.3);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px -10px var(--shadow-color);
 }
 
 .card h3 {
@@ -420,7 +462,7 @@ header {
   top: 0;
   height: 100%;
   width: 2px;
-  background: var(--card-border);
+  background: var(--border-color);
 }
 
 .timeline-item {
@@ -460,7 +502,7 @@ header {
   grid-template-columns: 1fr 1.5fr;
   gap: 4rem;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border-color);
   border-radius: 24px;
   padding: 3rem;
   overflow: hidden;
@@ -499,8 +541,8 @@ header {
 .form-control {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(2, 6, 23, 0.5);
-  border: 1px solid var(--card-border);
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   color: var(--text-main);
   font-family: inherit;
@@ -539,6 +581,96 @@ textarea.form-control {
   border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
+
+/* Contact Links */
+
+/* Contact Links */
+.contact-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-button);
+  border: 1px solid var(--border-color);
+  font-size: 1.5rem;
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-link:hover::before {
+  opacity: 1;
+}
+
+.contact-link:hover {
+  transform: translateY(-5px) scale(1.1);
+  color: #fff;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+.contact-link.whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  box-shadow: 0 10px 20px -5px rgba(37, 211, 102, 0.4);
+}
+
+.contact-link.github:hover {
+  background: #333;
+  border-color: #333;
+  box-shadow: 0 10px 20px -5px rgba(51, 51, 51, 0.4);
+}
+
+.contact-link.linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+  box-shadow: 0 10px 20px -5px rgba(0, 119, 181, 0.4);
+}
+
+.contact-link.youtube:hover {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  border-color: #ff0000;
+  box-shadow: 0 10px 20px -5px rgba(255, 0, 0, 0.3);
+}
+
+.contact-link.email:hover {
+  background: linear-gradient(135deg, #FFC107, #FF9800);
+  border-color: #FFC107;
+  box-shadow: 0 10px 20px -5px rgba(255, 193, 7, 0.3);
+}
+
+.contact-actions,
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+
+
+
+.contact-detail strong {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
 /* Project Carousel */
 .projects-nav {
   display: flex;
@@ -569,7 +701,7 @@ textarea.form-control {
   /* Strict 100% width */
   padding: 4rem 2.5rem 2.5rem 2.5rem;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   backdrop-filter: var(--glass);
   transition: all 0.3s ease;
@@ -640,7 +772,7 @@ textarea.form-control {
   height: 48px;
   border: none;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border-color);
   color: var(--primary);
   border-radius: 8px;
   cursor: pointer;
@@ -656,7 +788,7 @@ textarea.form-control {
 
 .nav-btn:hover {
   background: var(--primary);
-  color: var(--bg-darker);
+  color: var(--bg-page);
   border-color: var(--primary);
 }
 
@@ -692,7 +824,7 @@ textarea.form-control {
 footer {
   text-align: center;
   padding: 3rem 0;
-  border-top: 1px solid var(--card-border);
+  border-top: 1px solid var(--border-color);
   color: var(--text-muted);
   margin-top: 4rem;
 }
